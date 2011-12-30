@@ -133,6 +133,7 @@ bool RSExportForEach::validateAndConstructParams(
         << PVD->getName() << PVD->getType().getAsString();
       valid = false;
     } else {
+      llvm::StringRef ParamName = PVD->getName();
       if (ParamName.equals("x")) {
         if (mX) {
           ReportNameError(DiagEngine, PVD);
